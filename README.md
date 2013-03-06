@@ -14,3 +14,4 @@ References
 
 * [Project Euler #230: Fibonacci Words](http://projecteuler.net/problem=230)
 
+* https://en.wikipedia.org/wiki/Dragon_curve
