@@ -10,8 +10,8 @@
   [depth turn]
   (if (pos? depth)
     (let [next-depth (dec depth)
-          left       (dragon next-depth :left)
-          right      (dragon next-depth :right)]
+          left       (lazy-seq (dragon next-depth :left))
+          right      (lazy-seq (dragon next-depth :right))]
       (concat
         right 
         (if turn 
