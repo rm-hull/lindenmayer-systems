@@ -4,16 +4,16 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.5.0"]
                  [noir "1.3.0-beta10"]
-                 [jayq "2.0.0"]
+                 [jayq "2.1.0"]
                  [rm-hull/ring-gzip-middleware "0.1.4-SNAPSHOT"]
-                 [rm-hull/monet "0.1.4-SNAPSHOT"]]
+                 [rm-hull/monet "0.1.5-SNAPSHOT"]]
   :cljsbuild
     {:builds
      [{:source-paths ["src/lindenmayer/client"],
        :compiler
        {:pretty-print true,
         :output-to "resources/public/cljs/lindenmayer.js",
-        :externs ["externs/jquery-1.8.js"],
+        :externs ["externs/jquery.js"],
         :optimizations :advanced,
         :print-input-delimiter true}}]}
   :hooks [leiningen.cljsbuild]
