@@ -22,6 +22,8 @@ Roadmap
 
 References
 ----------
+* [The Algorithmic Beauty of Plants](http://algorithmicbotany.org/papers/abop/abop.pdf) [PDF]
+
 * [Project Euler #220: Heighway Dragon](http://projecteuler.net/problem=220)
 
 * [Project Euler #226: A Scoop of Blancmange](http://projecteuler.net/problem=226)
