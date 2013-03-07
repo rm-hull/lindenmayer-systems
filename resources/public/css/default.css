@@ -55,6 +55,15 @@ blockquote, q { quotes: "" ""; }
 a img { border: none; }
 
 div#wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     margin: 5px;
-    min-height: 98%;
+}
+
+canvas#world {
+    margin: auto;
+    display: block;
 }
