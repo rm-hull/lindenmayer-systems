@@ -32,5 +32,4 @@ References
 
 * https://en.wikipedia.org/wiki/L-system
 
-* [Sierpinski's Triangle](http://webrot.destructuring-bind.org/sierpinski?divisor=2) 
-  - observe the difference between prime and composite divisors
+* [Sierpinski's Triangle](http://webrot.destructuring-bind.org/sierpinski?divisor=2) - observe the difference between prime and composite divisors
