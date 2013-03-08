@@ -1,30 +1,54 @@
 (ns lindenmayer-systems.client.core
   (:use [monet.canvas :only [get-context save restore stroke-width stroke-cap stroke-style begin-path line-to stroke close-path ]]
-        [jayq.core :only [$ document-ready data text attr hide bind prevent]]
-        ))
+        [jayq.core :only [$ document-ready data text attr hide bind prevent]]))
 
-(defn dragon 
+; ==============================================
+; Dragon
+;   start  : FX
+;   rules  : (X → X+YF), (Y → FX-Y)
+; ==============================================
+
+(def dragon-seq
   "Unfolding the dragon"
-  [depth turn]
-  (if (pos? depth)
-    (let [next-depth (dec depth)
-          left       (lazy-seq (dragon next-depth :left))
-          right      (lazy-seq (dragon next-depth :right))]
-      (concat
-        right 
-        (if turn 
-          (cons turn left)
-          left)))))
+  (letfn [(seq0 [x y] 
+            (lazy-seq (cons (flatten x) (seq0 [x :right y :fwd] [:fwd x :left y]))))]
+    (seq0 [] []))) 
+
+; ==============================================
+; Koch Curve
+;   start  : F
+;   rules  : (F → F+F−F−F+F)
+; ==============================================
+
+(def koch-curve-seq
+  (letfn [(seq0 [f]
+            (lazy-seq (cons (flatten f) (seq0 [f :right f :left f :left f :right f]))))]
+    (seq0 [:fwd])))
+
+; ==============================================
+; Sierpinski Triangle
+;   start  : A
+;   rules  : (A → B−A−B), (B → A+B+A)
+;   angle  : 60°
+; ==============================================
+
+(def sierpinski-seq
+  (letfn [(seq0 [a b] 
+            (lazy-seq (cons (flatten a) (seq0 [b :left a :left b] [a :right b :right a]))))]
+    (seq0 [:fwd] [])) ) 
 
 (defn move 
   "Destructures a state (comprising a pair of co-ordinates and 
    a direction) and moves one step in that direction"
-  [[[x y] dir]]
-  (case dir
-    :north [x (inc y)]
-    :south [x (dec y)]
-    :east  [(inc x) y]
-    :west  [(dec x) y]))
+  [[[x y] dir] cmd]
+  (case cmd
+    :fwd 
+      (case dir
+        :north [x (inc y)]
+        :south [x (dec y)]
+        :east  [(inc x) y]
+        :west  [(dec x) y])
+    [x y]))
 
 (def direction-mapper
   { :north { :left :west,  :right :east,  :fwd :north, :back :south }
@@ -46,7 +70,7 @@
   ([] [])
   ([curr-state] curr-state)
   ([curr-state cmd]
-   [ (move curr-state) (new-direction curr-state cmd) ]))
+   [ (move curr-state cmd) (new-direction curr-state cmd) ]))
 
 (defn ->coords [transformer-fn]
   (let [init-state [[0 0] :north ]]
@@ -87,7 +111,7 @@
   (->
     ctx
     (save)
-    (stroke-width 2)
+    (stroke-width 1)
     (stroke-cap :square)
     (stroke-style :red)
     (begin-path)
@@ -105,7 +129,10 @@
     (let [canvas ($ :canvas#world)
           ctx    (get-context (.get canvas 0) "2d")
           [w h]  (available-area)
-          coords ((scaling-mapper 200 200 6) (dragon 11 nil))]
+          l-system (nth dragon-seq 13)
+          ;l-system (nth koch-curve-seq 5)
+          ;l-system (nth sierpinski-seq 4)
+          coords ((scaling-mapper 500 500 5) l-system)] 
       (->
         canvas
         (attr :width w)
