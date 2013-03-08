@@ -11,14 +11,29 @@ re-writing, deployed to Heroku: http://lindenmayer-systems.destructuring-bind.or
 
 Roadmap
 -------
+
+###Implemented
+
 * Prototyping with simple lazy Heighway's Dragon (see 
   http://lindenmayer-systems.destructuring-bind.org/ for an 
-  on-going example)
+  on-going example) - master branch
+
+* Implement flexible parallel (efficient) rewriting system and some example
+  L-System curves. - grammar branch
+
+    * Heighways Dragon
+
+    * Koch Curve
+
+    * 'Square' Sierpinski
+
+### TODO
 
 * Auto scaling / rotating for maximum use of available canvas area. 
 
-* Implement flexible parallel (efficient) rewriting system and some example
-  L-System curves.
+* Push/pop context (position and angle)
+
+* Support rotation angles other than 90°
 
 References
 ----------
