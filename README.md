@@ -31,11 +31,16 @@ Roadmap
 
 * Auto scaling / rotating for maximum use of available canvas area. 
 
-* Push/pop context (position and angle)
+* Generalized pattern compiler
 
-* Support rotation angles other than 90°
+* Command implementation
+    
+    * Push/pop context (position and angle)
 
-* Generalized compiler
+    * Support rotation angles other than 90°
+
+    * Colors
+
 
 References
 ----------
