@@ -3,9 +3,9 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.5.0"]
-                 [noir "1.3.0-beta10"]
+                 [noir "1.3.0"]
                  [jayq "2.1.0"]
-                 [rm-hull/ring-gzip-middleware "0.1.4-SNAPSHOT"]
+                 [rm-hull/ring-gzip-middleware "0.1.5-SNAPSHOT"]
                  [rm-hull/monet "0.1.5-SNAPSHOT"]]
   :cljsbuild
     {:builds
