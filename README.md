@@ -35,6 +35,8 @@ Roadmap
 
 * Support rotation angles other than 90°
 
+* Generalized compiler
+
 References
 ----------
 * [The Algorithmic Beauty of Plants](http://algorithmicbotany.org/papers/abop/abop.pdf) [PDF]
@@ -50,3 +52,5 @@ References
 * https://en.wikipedia.org/wiki/L-system
 
 * [Sierpinski's Triangle](http://webrot.destructuring-bind.org/sierpinski?divisor=2) - observe the difference between prime and composite divisors
+
+* http://www.kevs3d.co.uk/dev/lsystems/
