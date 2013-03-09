@@ -37,18 +37,17 @@
             (lazy-seq (cons (flatten a) (seq0 [b :left a :left b] [a :right b :right a]))))]
     (seq0 [:fwd] [])) ) 
 
+(def move-mapper
+  { :fwd  { :north [0 1],  :south [0 -1], :east [1 0],  :west [-1 0] }
+    :back { :north [0 -1], :south [0 1],  :east [-1 0], :west [1 0]  }})
+
 (defn move 
   "Destructures a state (comprising a pair of co-ordinates and 
    a direction) and moves one step in that direction"
-  [[[x y] dir] cmd]
-  (case cmd
-    :fwd 
-      (case dir
-        :north [x (inc y)]
-        :south [x (dec y)]
-        :east  [(inc x) y]
-        :west  [(dec x) y])
-    [x y]))
+  [[coords dir] cmd]
+  (let [delta (get-in move-mapper [cmd dir] [0 0])]
+   (map + coords delta)
+    ))
 
 (def direction-mapper
   { :north { :left :west,  :right :east,  :fwd :north, :back :south }
