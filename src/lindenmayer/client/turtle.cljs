@@ -11,8 +11,10 @@
         [min-y max-y] (apply (juxt min max) (map second coords))]
    [[min-x min-y] [max-x max-y]]))
 
+(def radians (/ Math/PI 180.0))
+
 (defn- deg->rad [theta]
-  (* theta (/ Math/PI 180.0)))
+  (* theta radians))
 
 (defn- update-position [state cmd]
   (if (= cmd :fwd)
