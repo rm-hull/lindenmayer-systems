@@ -6,7 +6,7 @@
                  [noir "1.3.0"]
                  [jayq "2.1.0"]
                  [rm-hull/ring-gzip-middleware "0.1.5-SNAPSHOT"]
-                 [rm-hull/monet "0.1.5-SNAPSHOT"]]
+                 [rm-hull/monet "0.1.6-SNAPSHOT"]]
   :cljsbuild
     {:builds
      [{:source-paths ["src/lindenmayer/client"],
