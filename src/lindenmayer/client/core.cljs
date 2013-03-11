@@ -1,6 +1,7 @@
 (ns lindenmayer-systems.client.core
-  (:use [monet.canvas :only [get-context save restore stroke-width stroke-cap stroke-style begin-path line-to stroke close-path ]]
-        [jayq.core :only [$ document-ready data text attr hide bind prevent]]))
+  (:use [lindenmayer-systems.client.turtle :only [draw!]]
+        [monet.canvas :only [get-context]]
+        [jayq.core :only [$ document-ready attr]]))
 
 ; ==============================================
 ; Dragon
@@ -32,92 +33,35 @@
 ;   angle  : 60°
 ; ==============================================
 
-(def sierpinski-seq
+(def sierpinski-triangle-seq
+  (letfn [(seq0 [f g] 
+            (lazy-seq (cons (flatten f) (seq0 
+                                          [f :left g :right f :right g :left f]   
+                                          [g g]))))]
+   (seq0 [:fwd] [:fwd]))) 
+
+
+(def sierpinski-curve-seq
   (letfn [(seq0 [a b] 
-            (lazy-seq (cons (flatten a) (seq0 [b :left a :left b] [a :right b :right a]))))]
-    (seq0 [:fwd] [])) ) 
+            (lazy-seq (cons (flatten a) (seq0 
+                                          [b :left a :left b] 
+                                          [a :right b :right a]))))]
+    (seq0 [:fwd] [:fwd]))) 
 
-(def move-mapper
-  { :fwd  { :north [0 1],  :south [0 -1], :east [1 0],  :west [-1 0] }
-    :back { :north [0 -1], :south [0 1],  :east [-1 0], :west [1 0]  }})
 
-(defn move 
-  "Destructures a state (comprising a pair of co-ordinates and 
-   a direction) and moves one step in that direction"
-  [[coords dir] cmd]
-  (let [delta (get-in move-mapper [cmd dir] [0 0])]
-   (map + coords delta)
-    ))
+(def sierpinski-median-curve-seq
+  (letfn [(seq0 [l r] 
+            (lazy-seq (cons (flatten l) (seq0 
+                                          [:right r :left :fwd :left r :right] 
+                                          [:left l :right :fwd :right l :left]))))]
+    (seq0 [] []))) 
 
-(def direction-mapper
-  { :north { :left :west,  :right :east,  :fwd :north, :back :south }
-    :south { :left :east,  :right :west,  :fwd :south, :back :north }
-    :east  { :left :north, :right :south, :fwd :east,  :back :west  }
-    :west  { :left :south, :right :north, :fwd :west,  :back :east  } })
-
-(defn new-direction 
-  "Destructures a state and a command, and works out the new direction,
-   e.g. if direction is currently north, but the command is to turn left,
-   then the new direction is east."
-  [[_ dir] cmd]
-  (get-in direction-mapper [dir cmd]))
-
-(defn next-state 
-  "Evolves the current state and a given command to determine the next state,
-   e.g. if the current position is (4,3) pointing north, then move to (4,4)
-   and turn in to the heading relative to the command."
-  ([] [])
-  ([curr-state] curr-state)
-  ([curr-state cmd]
-   [ (move curr-state cmd) (new-direction curr-state cmd) ]))
-
-(defn ->coords [transformer-fn]
-  (let [init-state [[0 0] :north ]]
-    (fn [folds]
-      (->> folds
-        (reductions next-state init-state)
-        (map (comp transformer-fn first)))))) 
-
-;; Co-ordinate transforming functions
-
-(defn scale [z]
-  (fn [coll] (map (partial * z) coll)))
-
-(defn offset [a]
-  (fn [coll] (map + a coll)))
-
-(defn rotate [theta]
-  (fn [coll] coll)) ; TODO
-
-; Also need:
-;  - bounds
-;  - scale-offset calculator to maximize for available screen area
-
-(def simple-mapper (->coords identity)) 
-
-(defn scaling-mapper [x y z] 
-  (->coords (comp (offset [x y]) (scale z)))) 
-
-;(simple-mapper (dragon 5 nil))  
-;((scaling-mapper 500 500 16) (dragon 7 nil))  
-
-(defn draw-path-segments! [ctx coords]
-  (doseq [[x y] coords]
-    (line-to ctx x y))
-  ctx) ; return the context for threading
-
-(defn draw! [ctx coords]
-  (->
-    ctx
-    (save)
-    (stroke-width 1)
-    (stroke-cap :square)
-    (stroke-style :red)
-    (begin-path)
-    (draw-path-segments! coords)
-    (stroke)
-    (close-path)
-    (restore)))
+(def space-filling-curve-seq
+  (letfn [(seq0 [x y] 
+            (lazy-seq (cons (flatten x) (seq0 
+                                          [:left y :fwd :right x :fwd x :right :fwd y :left] 
+                                          [:right x :fwd :left y :fwd y :left :fwd x :right]))))]
+    (seq0 [] [])))
 
 (defn available-area []
   (let [div (first ($ :div#wrapper))]
@@ -127,13 +71,16 @@
   (fn []
     (let [canvas ($ :canvas#world)
           ctx    (get-context (.get canvas 0) "2d")
-          [w h]  (available-area)
-          l-system (nth dragon-seq 13)
-          ;l-system (nth koch-curve-seq 5)
-          ;l-system (nth sierpinski-seq 4)
-          coords ((scaling-mapper 500 500 5) l-system)] 
+          [w h]  (available-area) ]
       (->
         canvas
         (attr :width w)
         (attr :height h))
-      (draw! ctx coords))))
+      (case (rand-int 6)
+        0 (draw! ctx 90  (nth dragon-seq 13) [w h])
+        1 (draw! ctx 90  (nth koch-curve-seq 5) [w h])
+        2 (draw! ctx 60  (nth sierpinski-curve-seq 8) [w h])
+        3 (draw! ctx 120 (nth sierpinski-triangle-seq 6) [w h])
+        4 (draw! ctx 45  (nth sierpinski-median-curve-seq 13) [w h])
+        5 (draw! ctx 90  (nth space-filling-curve-seq 6) [w h])
+        ))))

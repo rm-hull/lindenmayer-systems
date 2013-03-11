@@ -7,7 +7,8 @@ processes of plant development, but also able to model the morphology of
 a variety of organisms.
 
 This project is a pure ClojureScript implementation, demonstrating L-System 
-re-writing, deployed to Heroku: http://lindenmayer-systems.destructuring-bind.org/
+re-writing, deployed to Heroku: http://lindenmayer-systems.destructuring-bind.org/ - 
+refreshing the page will show a random L-system generation from a set of 6.
 
 Roadmap
 -------
@@ -16,31 +17,41 @@ Roadmap
 
 * Prototyping with simple lazy Heighway's Dragon (see 
   http://lindenmayer-systems.destructuring-bind.org/ for an 
-  on-going example) - master branch
+  on-going example) - see 'master' branch
 
 * Implement flexible parallel (efficient) rewriting system and some example
-  L-System curves. - grammar branch
+  L-System curves. (see 'grammar' branch)
 
     * Heighways Dragon
 
     * Koch Curve
 
-    * 'Square' Sierpinski
+    * Sierpinski Curve / Triangle / Median Curve
 
-### TODO
+    * Space-filling Curve
 
-* Auto scaling / rotating for maximum use of available canvas area. 
 
-* Generalized pattern compiler
+* Turtle implementation
 
-* Command implementation
+    * Auto scaling / rotating for maximum use of available canvas area. 
     
-    * Push/pop context (position and angle)
-
     * Support rotation angles other than 90°
 
     * Colors
 
+### TODO
+
+* Generalized pattern compiler (in progress - see 'compiler' branch)
+
+* UI improvements to allow editing and a last-created list
+
+* Command implementation
+    
+    * Push/pop context (position, angle and color)
+
+Implementation Notes
+--------------------
+TODO
 
 References
 ----------
