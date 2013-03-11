@@ -1,4 +1,4 @@
-(ns lindenmayer-systems.client.turtle
+(ns lindenmayer.client.turtle
   (:use [monet.canvas :only [save restore stroke-width stroke-cap stroke-style 
                              begin-path line-to stroke close-path transform]]))
 

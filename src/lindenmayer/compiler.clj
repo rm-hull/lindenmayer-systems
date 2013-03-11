@@ -1,6 +1,6 @@
-(ns lindenmayer-systems.compiler)
+(ns lindenmayer.compiler)
 
-(defn ->symbol [c]
+(defn- ->symbol [c]
   (case c
     \+ :right
     \- :left
@@ -10,24 +10,25 @@
     \^ :fwd
     (symbol (str c))))
 
-(defn split-on-assignment [symbols]
+(defn- split-on-assignment [symbols]
   [ (first symbols) (vec (drop 2 symbols)) ])
 
-(defn generate [rule]
+(defn- generate [rule]
   (->> 
     (clojure.string/lower-case rule)
     seq
     (map ->symbol)
     vec))
 
-(defn compile [rules] 
+(defn- builder [rules] 
   (->> 
     rules
     (map (comp split-on-assignment generate))
     (into (array-map))))
 
+; TODO - doesnt quite capture initial condition, assumes the first param
 (defmacro l-system [axioms & rules]
-  (let [rules (compile rules)
+  (let [rules (builder rules)
         params (keys rules)
         init-args (map generate axioms)]
     `(letfn [(seq0# [~@params]
