@@ -15,7 +15,7 @@ Roadmap
 
 ###Implemented
 
-* Prototyping with simple lazy Heighway's Dragon (see 
+* Prototyping with several different l-systems (see 
   http://lindenmayer-systems.destructuring-bind.org/ for an 
   on-going example) - see 'master' branch
 
@@ -30,6 +30,7 @@ Roadmap
 
     * Space-filling Curve
 
+* Generalized pattern compiler (see 'compiler' branch)
 
 * Turtle implementation
 
@@ -41,13 +42,13 @@ Roadmap
 
 ### TODO
 
-* Generalized pattern compiler (in progress - see 'compiler' branch)
-
 * UI improvements to allow editing and a last-created list
 
 * Command implementation
     
     * Push/pop context (position, angle and color)
+
+* Proper support for initial conditions
 
 Implementation Notes
 --------------------
