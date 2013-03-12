@@ -35,7 +35,7 @@
 
 (defn- update-color [state cmd & peek-ahead]
   (if (and (= cmd :color) (number? (first peek-ahead)))
-    (assoc state :color-index peek-ahead)
+    (assoc state :color-index (first peek-ahead))
     (dissoc state :color-index)))
 
 (defn- update-stack [state cmd]
