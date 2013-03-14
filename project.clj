@@ -9,15 +9,16 @@
                  [rm-hull/monet "0.1.6-SNAPSHOT"]]
   :cljsbuild
     {:builds
-     [{:source-paths ["src/lindenmayer/client"],
+     [{:source-paths ["src/lindenmayer/client" "target/generated-cljs"],
        :compiler
        {:pretty-print true,
         :output-to "resources/public/cljs/lindenmayer.js",
         :externs ["externs/jquery.js"],
         :optimizations :advanced,
         :print-input-delimiter true}}]}
-  :hooks [leiningen.cljsbuild]
-  :plugins [[lein-cljsbuild "0.3.0"]]
+  :hooks [leiningen.dalap leiningen.cljsbuild]
+  :plugins [[lein-cljsbuild "0.3.0"]
+            [com.birdseye-sw/lein-dalap "0.1.0"]]
   :profiles {:dev {:dependencies [[vimclojure/server "2.3.6"]]}}
   :main lindenmayer.server
   :min-lein-version "2.0.0"

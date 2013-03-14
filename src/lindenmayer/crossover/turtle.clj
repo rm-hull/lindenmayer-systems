@@ -1,6 +1,4 @@
-(ns lindenmayer.client.turtle
-  (:use [monet.canvas :only [save restore stroke-width stroke-cap stroke-style 
-                             begin-path line-to stroke close-path transform]]))
+(ns lindenmayer.crossover.turtle)
 
 ;; Basic Turtle implementation
 ;; ---------------------------
@@ -93,27 +91,8 @@
         scale   (min scale-x scale-y)]
     [ scale 0 0 (- scale) (- min-x) (* scale max-y) ])) 
 
-(defn- draw-path-segments! [ctx data]
-  (doseq [d data]
-    (when-let [color (:color d)]
-      (stroke-style ctx color))
-    (apply line-to ctx (:coords d)))
-  ctx) ; return the context for threading
-
-(defn draw! [ctx cmds screen-area]
-  (let [width    2.5
-        data   (process (concat [:color :red] cmds))
+(defn draw! [renderer screen-area cmds]
+  (let [data   (process (concat [:color :red] cmds))
         bounds (bounding-box (map :coords data))
         matrix (calc-matrix-transform screen-area bounds)]
-    (.log js/console (pr-str "screen-area" screen-area))
-    (.log js/console (pr-str "bounds" bounds))
-    (.log js/console (pr-str "matrix" matrix))
-    ;(.log js/console (pr-str "data" data))
-    (->
-      (apply transform ctx matrix)
-      (stroke-width width)
-      (stroke-cap :square)
-      (begin-path)
-      (draw-path-segments! data)
-      (stroke)
-      (close-path))))
+    (renderer data bounds matrix)))
