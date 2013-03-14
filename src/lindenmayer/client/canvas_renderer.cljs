@@ -9,8 +9,9 @@
     (apply line-to ctx (:coords d)))
   ctx) ; return the context for threading
 
-(defn render! [ctx]
-  (fn [data bounds matrix]
+(defn ->canvas [ctx]
+  (fn [data [w h] bounds matrix]
+    (.log js/console (pr-str "screen-size" [w h]))
     (.log js/console (pr-str "bounds" bounds))
     (.log js/console (pr-str "matrix" matrix))
     (->

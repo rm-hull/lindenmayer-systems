@@ -95,4 +95,4 @@
   (let [data   (process (concat [:color :red] cmds))
         bounds (bounding-box (map :coords data))
         matrix (calc-matrix-transform screen-area bounds)]
-    (renderer data bounds matrix)))
+    (renderer data screen-area bounds matrix)))
