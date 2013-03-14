@@ -19,26 +19,26 @@ Roadmap
   http://lindenmayer-systems.destructuring-bind.org/ for an 
   on-going example) - see 'master' branch
 
+* Generalized pattern compiler (see 'compiler' branch)
+
 * Implement flexible parallel (efficient) rewriting system and some example
   L-System curves. (see 'grammar' branch)
 
-    * Heighways Dragon
+    - Heighways Dragon
 
-    * Koch Curve
+    - Koch Curve
 
-    * Sierpinski Curve / Triangle / Median Curve
+    - Sierpinski Curve / Triangle / Median Curve
 
-    * Space-filling Curve
-
-* Generalized pattern compiler (see 'compiler' branch)
+    - Space-filling Curve
 
 * Turtle implementation
 
-    * Auto scaling / rotating for maximum use of available canvas area. 
+    - Auto scaling / rotating for maximum use of available canvas area. 
     
-    * Support rotation angles other than 90°
+    - Support rotation angles other than 90°
 
-    * Colors
+    - Colors
 
 ### TODO
 
@@ -46,9 +46,11 @@ Roadmap
 
 * Command implementation
     
-    * Push/pop context (position, angle and color)
+    - Push/pop context (position, angle and color)
 
 * Proper support for initial conditions
+
+* Re-write turtle draw to allow HTML5 Canvas and PNG rendering plugins
 
 Implementation Notes
 --------------------
