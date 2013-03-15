@@ -17,7 +17,7 @@
         :optimizations :advanced,
         :print-input-delimiter true}}]}
   :hooks [leiningen.dalap leiningen.cljsbuild]
-  :plugins [[lein-cljsbuild "0.3.0"]
+  :plugins [[lein-cljsbuild "0.2.9"]
             [com.birdseye-sw/lein-dalap "0.1.0"]]
   :profiles {:dev {:dependencies [[vimclojure/server "2.3.6"]]}}
   :main lindenmayer.server
