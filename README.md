@@ -6,9 +6,16 @@ variant of a formal grammar, most famously used to model the growth
 processes of plant development, but also able to model the morphology of
 a variety of organisms.
 
-This project is a pure ClojureScript implementation, demonstrating L-System 
-re-writing, deployed to Heroku: http://lindenmayer-systems.destructuring-bind.org/ - 
-refreshing the page will show a random L-system generation from a set of 6.
+This project is a pure Clojure/ClojureScript implementation, demonstrating L-System 
+re-writing, deployed to Heroku: 
+
+* Use http://lindenmayer-systems.destructuring-bind.org/ - 
+  this will render the page in ClojureScript & HTML5 canvas, processed entirely 
+  client-side; refreshing will show a random L-system generation from a set of 8.
+
+* Use http://lindenmayer-systems.destructuring-bind.org/random - 
+  this will render the page server-side, and will deliver a PNG image; 
+  refreshing will show a random L-system generation from a set of 8.
 
 Roadmap
 -------
@@ -20,6 +27,8 @@ Roadmap
   on-going example) - see 'master' branch
 
 * Generalized pattern compiler (see 'compiler' branch)
+
+* Re-wrote turtle draw to allow HTML5 Canvas and PNG rendering plugins
 
 * Implement flexible parallel (efficient) rewriting system and some example
   L-System curves. (see 'grammar' branch)
@@ -49,8 +58,6 @@ Roadmap
     - Push/pop context (position, angle and color)
 
 * Proper support for initial conditions
-
-* Re-write turtle draw to allow HTML5 Canvas and PNG rendering plugins
 
 Implementation Notes
 --------------------
