@@ -49,13 +49,11 @@ Roadmap
 
     - Colors
 
+    - Push/pop context (position, angle and color)
+
 ### TODO
 
 * UI improvements to allow editing and a last-created list
-
-* Command implementation
-    
-    - Push/pop context (position, angle and color)
 
 * Proper support for initial conditions
 
