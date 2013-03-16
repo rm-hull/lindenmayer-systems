@@ -44,7 +44,7 @@
   (assoc state :color color))
 
 (defn- color-index [state index]
-  (assoc state :color (get colors index)))
+  (update-color state (get colors index)))
 
 (defn- push-state [state _]
   (let [saved (select-keys state [:coords :heading])]
@@ -72,7 +72,7 @@
   ([] [])
   ([curr-state] curr-state)
   ([curr-state [cmd & peek-ahead]]
-    (if-let [update-fn (get state-mapper cmd nil)]
+    (if-let [update-fn (get state-mapper cmd)]
       ; always need stack/heading/coords, but nothing else
       (update-fn (select-keys curr-state [:coords :heading :stack]) (first peek-ahead))
       curr-state)))
