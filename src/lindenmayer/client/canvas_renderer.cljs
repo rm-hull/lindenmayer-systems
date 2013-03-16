@@ -1,12 +1,12 @@
 (ns lindenmayer.client.canvas-renderer
   (:use [monet.canvas :only [save restore stroke-width stroke-cap stroke-style 
-                             begin-path line-to stroke close-path transform]]))
+                             begin-path line-to move-to stroke close-path transform]]))
 
 (defn- draw-path-segments! [ctx data]
   (doseq [d data]
     (when-let [color (:color d)]
       (stroke-style ctx color))
-    (apply line-to ctx (:coords d)))
+    (apply (if (:restore-point d) move-to line-to) ctx (:coords d)))
   ctx) ; return the context for threading
 
 (defn ->canvas [ctx]
