@@ -10,7 +10,7 @@
 ;; By default, the drawing is scaled to fill the screen dimensions
 ;; (in this case [100,100])
 
-(def colors [:red :green :blue :yellow :cyan :magenta :black :white "#663300" "#68FF33"])
+(def colors [:red :green :blue :yellow :cyan :magenta :orange :black "#663300" "#68FF33"])
 
 (defn- bounding-box 
   "Calculates the smallest and largest [x,y] points"
@@ -43,18 +43,22 @@
 (defn- update-color [state color]
   (assoc state :color color))
 
-(defn- color-index [index]
-  (get colors index))
+(defn- color-index [state index]
+  (assoc state :color (get colors index)))
 
 (defn- push-state [state _]
-  state) ; TODO
+  (let [saved (select-keys state [:coords :heading])]
+    (update-in state [:stack] #(conj % saved))))
 
 (defn- pop-state [state _]
-  state) ; TODO
+  (let [restored (peek (:stack state))]
+    (-> state
+      (merge restored {:restore-point true})
+      (update-in [:stack] pop))))
 
 (def state-mapper
   { :color   update-color 
-    :color-index (comp update-color color-index) 
+    :color-index color-index 
     :left    (partial turn -)
     :right   (partial turn +)
     :fwd     move-forward 
@@ -69,8 +73,8 @@
   ([curr-state] curr-state)
   ([curr-state [cmd & peek-ahead]]
     (if-let [update-fn (get state-mapper cmd nil)]
-      ; always need stack/heading/coords, but not color
-      (update-fn (dissoc curr-state :color) (first peek-ahead))
+      ; always need stack/heading/coords, but nothing else
+      (update-fn (select-keys curr-state [:coords :heading :stack]) (first peek-ahead))
       curr-state)))
 
 (defn- process [cmds]
