@@ -1,8 +1,8 @@
 (ns lindenmayer.views.dragon
   (:use [noir.core :only [defpage]]
         [lindenmayer.compiler :only [l-system]]
-        [lindenmayer.crossover.turtle :only [draw!]]
-        [lindenmayer.png-renderer :only [->img]]))
+        [turtle.core :only [draw!]]
+        [turtle.renderer.png :only [->img]]))
 
 ; TODO - move to crossover
 (defn annotate 

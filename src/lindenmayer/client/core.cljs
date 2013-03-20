@@ -1,7 +1,7 @@
 (ns lindenmayer.client.core
    (:require-macros [lindenmayer.compiler :as compiler])
-   (:use [lindenmayer.crossover.turtle :only [draw!]]
-         [lindenmayer.client.canvas-renderer :only [->canvas]]
+   (:use [turtle.core :only [draw!]]
+         [turtle.renderer.canvas :only [->canvas]]
          [monet.canvas :only [get-context]]
          [jayq.core :only [$ document-ready attr]]))
 
