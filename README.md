@@ -41,21 +41,12 @@ Roadmap
 
     - Space-filling Curve
 
-* Turtle implementation
-
-    - Auto scaling / rotating for maximum use of available canvas area. 
-    
-    - Support rotation angles other than 90°
-
-    - Colors
-
-    - Push/pop context (position, angle and color)
+    - Penrose Tiling
 
 ### TODO
 
 * UI improvements to allow editing and a last-created list
 
-* Proper support for initial conditions
 
 Implementation Notes
 --------------------
