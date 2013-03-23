@@ -22,6 +22,6 @@
   :plugins [[rm-hull/lein-cljsbuild "0.3.1-SNAPSHOT"]]
   :profiles {:dev {:dependencies [[vimclojure/server "2.3.6"]]}}
   :main lindenmayer.server
-  :min-lein-version "2.1.0"
+  :min-lein-version "2.1.1"
   :warn-on-reflection true
   :description "A web-based lindenmayer-systems animator")
