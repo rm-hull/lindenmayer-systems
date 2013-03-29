@@ -7,8 +7,8 @@
                  [jayq "2.3.0"]
                  [ns-tracker "0.2.1"]
                  [rm-hull/ring-gzip-middleware "0.1.5"]
-                 [rm-hull/monet "0.1.6"]
-                 [rm-hull/turtle "0.1.2"]]
+                 [rm-hull/monet "0.1.7"]
+                 [rm-hull/turtle "0.1.3"]]
   :cljsbuild
     {:builds
      [{:source-paths ["src/lindenmayer/client"],
