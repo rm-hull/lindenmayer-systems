@@ -47,6 +47,7 @@ Roadmap
 
 * UI improvements to allow editing and a last-created list
 
+* Stop using Noir
 
 Implementation Notes
 --------------------
@@ -69,3 +70,5 @@ References
 * [Sierpinski's Triangle](http://webrot.destructuring-bind.org/sierpinski?divisor=2) - observe the difference between prime and composite divisors
 
 * http://www.kevs3d.co.uk/dev/lsystems/
+
+* http://teethgrinder.co.uk/canvas/l-system-1.html
