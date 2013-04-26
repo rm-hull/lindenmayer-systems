@@ -6,16 +6,15 @@ variant of a formal grammar, most famously used to model the growth
 processes of plant development, but also able to model the morphology of
 a variety of organisms.
 
-This project is a pure Clojure/ClojureScript implementation, demonstrating L-System 
+This project is written using Clojure, demonstrating L-System 
 re-writing, deployed to Heroku: 
 
-* Use http://lindenmayer-systems.destructuring-bind.org/ - 
-  this will render the page in ClojureScript & HTML5 canvas, processed entirely 
-  client-side; refreshing will show a random L-system generation from a set of 8.
+* Use http://lindenmayer-systems.destructuring-bind.org/explorer/X - where x = 0..10. - 
+  this will render the page server-side, and will deliver a PNG image; 
 
 * Use http://lindenmayer-systems.destructuring-bind.org/random - 
   this will render the page server-side, and will deliver a PNG image; 
-  refreshing will show a random L-system generation from a set of 8.
+  refreshing will show a random L-system generation from a set of 11.
 
 Roadmap
 -------
@@ -29,6 +28,8 @@ Roadmap
 * Generalized pattern compiler (see 'compiler' branch)
 
 * Re-wrote turtle draw to allow HTML5 Canvas and PNG rendering plugins
+
+* No longer uses Noir
 
 * Implement flexible parallel (efficient) rewriting system and some example
   L-System curves. (see 'grammar' branch)
@@ -47,7 +48,6 @@ Roadmap
 
 * UI improvements to allow editing and a last-created list
 
-* Stop using Noir
 
 Implementation Notes
 --------------------
