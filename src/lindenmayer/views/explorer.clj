@@ -2,7 +2,8 @@
   (:use [compojure.core :only [defroutes GET]]
         [lindenmayer.compiler :only [l-system]]
         [turtle.core :only [draw!]]
-        [turtle.renderer.png :only [->img]]))
+        [turtle.renderer.bitmap :only [->img]]
+        [turtle.renderer.vector :only [->svg]]))  
 
 (defn- annotate 
   "Returns a function that can reduce a list by annotating :left, :right and 
@@ -32,7 +33,7 @@
                     9 (reduce (annotate 25 40)  [] (nth (l-system "X"                       ("" "^")             ("X=F-[[X]+]+F[+FX]-X" "F=FF")) 8)) ; Fractal Plant
                    10 (reduce (annotate 36 60)  [] (nth (l-system "[B]++[B]++[B]++[B]++[B]" ("^" "^" "^" "^" "") ("A=CE++DE----BE[-CE----AE]++" "B=+CE--DE[---AE--BE]+" "C=-AE++BE[+++CE++DE]-" "D=--CE++++AE[+DE++++BE]--BE" "E=")) 5)) ; Penrose Tiling
             )]
-    (draw! ->img cmd [1000 600])))
+    (draw! ->svg cmd [1000 600])))
 
 (defroutes routes
   (GET "/explorer/:id" [id] 

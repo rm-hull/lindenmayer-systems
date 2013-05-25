@@ -3,7 +3,7 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.5.1"]
-                 [org.clojure/data.json "0.2.1"]
+                 [org.clojure/data.json "0.2.2"]
                  [org.clojure/data.xml "0.0.7"]
                  [clj-http "0.7.2"]
                  [clj-time "0.5.0"]
@@ -13,7 +13,7 @@
                  [com.novemberain/monger "1.5.0-rc1"]
                  [rm-hull/ring-gzip-middleware "0.1.5"]
                  [rm-hull/monet "0.1.7"]
-                 [rm-hull/turtle "0.1.3"]]
+                 [rm-hull/turtle "0.1.4"]]
   :cljsbuild
     {:builds
      [{:source-paths ["src/lindenmayer/client"],
