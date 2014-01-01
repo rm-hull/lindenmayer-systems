@@ -72,3 +72,7 @@ References
 * http://www.kevs3d.co.uk/dev/lsystems/
 
 * http://teethgrinder.co.uk/canvas/l-system-1.html
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rm-hull/lindenmayer-systems/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
