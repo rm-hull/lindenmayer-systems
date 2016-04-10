@@ -21,6 +21,7 @@
   :plugins [
     [lein-ring "0.9.7"]]
   :source-paths ["src"]
+  :resource-paths ["resources"]
   :jar-exclusions [#"(?:^|/).git"]
   :uberjar-exclusions [#"\.SF" #"\.RSA" #"\.DSA"]
   :min-lein-version "2.6.1"

@@ -7,39 +7,166 @@
     [turtle.renderer.bitmap :refer [->img]]
     [turtle.renderer.vector :refer [->svg]]))
 
-(defn- annotate
-  "Returns a function that can reduce a list by annotating :left, :right and
-   :fwd instructions by the given distances and angles."
-  [angle distance]
-  (fn
-    ([] [])
-    ([xs] xs)
-    ([xs y]
-      (case y
-        :right (conj (conj xs y) angle)
-        :left  (conj (conj xs y) angle)
-        :fwd   (conj (conj xs y) distance)
-        (conj xs y)))))
+(def presets {
+  :heighways-dragon
+  (first
+    (drop
+      13
+      (l-system
+        "^X"
+        ("" "")
+        ("X=X+Y^" "Y=^X-Y")
+        90
+        15)))
+
+  :koch-curve
+  (first
+    (drop
+      5
+      (l-system
+        "-F"
+        ("^")
+        ("F=F+F-F-F+F")
+        90
+        10)))
+
+  :koch-snowflake
+  (first
+    (drop
+      5
+      (l-system
+        "-F--F--F"
+        ("^")
+        ("F=F+F--F+F")
+        60
+        10)))
+
+  :cesaro-koch-fractal
+  (first
+    (drop
+      6
+      (l-system
+        "F"
+        ("^")
+        ("F=F+F--F+F")
+        85
+        30)))
+
+  :peano-gosper-curve
+  (first
+    (drop
+      4
+      (l-system
+        "A"
+        ("^" "^")
+        ("A=A-B--B+A++AA+B-" "B=+A-BB--B-A++A+B")
+        60
+        30)))
+
+  :sierpinski-curve
+  (first
+    (drop
+      8
+      (l-system
+        "A"
+        ("^" "^")
+        ("A=B-A-B" "B=A+B+A")
+        60 10)))
+
+  :sierpinski-triangle
+  (first
+    (drop
+      6
+      (l-system
+        "F-G-G"
+        ("^" "^")
+        ("F=F-G+F+G-F" "G=GG")
+        120
+        40)))
+
+  :sierpinski-median-curve
+  (first
+    (drop
+      11
+      (l-system
+        "L"
+        ("" "")
+        ("L=+R-^-R+" "R=-L+^+L-")
+        45
+        10)))
+
+  :hilberts-space-filling-curve
+  (first
+    (drop
+      6
+      (l-system
+        "X"
+        ("" "")
+        ("X=-Y^+X^X+^Y-" "Y=+X^-Y^Y-^X+")
+        90
+        20)))
+
+  :sierpinski-carpet
+  (first
+    (drop
+      4
+      (l-system
+        "F"
+        ("^" "^")
+        ("F=F+F-F-F-G+F+F+F-F" "G=GGG")
+        90 20)))
+
+  :lace
+  (first
+    (drop
+      8
+      (l-system
+        "W"
+        ("" "" "" "")
+        ("W=+++X--^--Z^X+", "X=---W++^++Y^W-", "Y=+Z^X--^--Z+++", "Z=-Y^W++^++Y---")
+        30
+        10)))
+
+  :tree
+  (first
+    (drop
+      4
+      (l-system
+        "^F"
+        ("^")
+        ("F=#8FF-[#3-F+F+F]+[#9+F-F-F]")
+        22
+        40)))
+
+  :fractal-plant
+  (first
+    (drop
+      7
+      (l-system
+        "X"
+        ("" "^")
+        ("X=F-[[X]+]+F[+FX]-X" "F=FF")
+        25
+        30)))
+
+  :penrose-tiling
+  (first
+    (drop
+      5
+      (l-system
+        "[B]++[B]++[B]++[B]++[B]"
+        ("^" "^" "^" "^" "")
+        ("A=CE++DE----BE[-CE----AE]++" "B=+CE--DE[---AE--BE]+" "C=-AE++BE[+++CE++DE]-" "D=--CE++++AE[+DE++++BE]--BE" "E=")
+        36
+        60)))
+  })
 
 (defn- explore [id]
-  (let [cmd (case id
-                    0 (reduce (annotate 90 10)  [] (nth (l-system "^X"                      ("" "")              ("X=X+Y^" "Y=^X-Y"))       13))    ; Heighway's Dragon
-                    1 (reduce (annotate 90 10)  [] (nth (l-system "-F"                      ("^")                ("F=F+F-F-F+F"))            5))    ; Koch Curve
-                    2 (reduce (annotate 60 10)  [] (nth (l-system "A"                       ("^" "^")            ("A=B-A-B" "B=A+B+A"))      8))    ; Sierpinski Curve
-                    3 (reduce (annotate 120 40) [] (nth (l-system "F-G-G"                   ("^" "^")            ("F=F-G+F+G-F" "G=GG"))     6))    ; Sierpinski Triangle
-                    4 (reduce (annotate 45 10)  [] (nth (l-system "L"                       ("" "")              ("L=+R-^-R+" "R=-L+^+L-")) 13))    ; Sierpinski Median Curve
-                    5 (reduce (annotate 90 20)  [] (nth (l-system "X"                       ("" "")              ("X=-Y^+X^X+^Y-" "Y=+X^-Y^Y-^X+")) 6))  ; Hilbert's space-filling Curve
-                    6 (reduce (annotate 90 20)  [] (nth (l-system "F"                       ("^" "^")            ("F=F+F-F-F-G+F+F+F-F" "G=GGG")) 4)) ; Sierpinski's Carpet
-                    7 (reduce (annotate 30 10)  [] (nth (l-system "W"                       ("" "" "" "")        ("W=+++X--^--Z^X+", "X=---W++^++Y^W-", "Y=+Z^X--^--Z+++", "Z=-Y^W++^++Y---")) 8)) ; Lace
-                    8 (reduce (annotate 22 40)  [] (nth (l-system "^F"                      ("^")                ("F=#8FF-[#3-F+F+F]+[#9+F-F-F]")) 4)) ; Tree
-                    9 (reduce (annotate 25 40)  [] (nth (l-system "X"                       ("" "^")             ("X=F-[[X]+]+F[+FX]-X" "F=FF")) 8)) ; Fractal Plant
-                   10 (reduce (annotate 36 60)  [] (nth (l-system "[B]++[B]++[B]++[B]++[B]" ("^" "^" "^" "^" "") ("A=CE++DE----BE[-CE----AE]++" "B=+CE--DE[---AE--BE]+" "C=-AE++BE[+++CE++DE]-" "D=--CE++++AE[+DE++++BE]--BE" "E=")) 5)) ; Penrose Tiling
-            )]
-    (draw! ->svg cmd [1000 600])))
+  (draw! ->svg (presets id) [1000 600]))
 
 (defroutes routes
   (GET "/explorer/:id" [id]
-    (explore (Integer/parseInt id)))
+    (explore (keyword id)))
 
   (GET "/random" []
-    (explore (rand-int 11))))
+    (explore (rand-nth (keys presets)))))

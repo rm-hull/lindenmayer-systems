@@ -1,13 +1,13 @@
 (ns lindenmayer.compiler)
 
-(defn- ->symbol [c]
-  (case c
-    \+ :right
-    \- :left
+(defn make-symbol-table [angle distance]
+  {
+    \+ [:right angle]
+    \- [:left angle]
+    \^ [:fwd distance]
     \[ :save
     \] :restore
     \# :color-index
-    \^ :fwd
     \0 0
     \1 1
     \2 2
@@ -17,29 +17,31 @@
     \6 6
     \7 7
     \8 8
-    \9 9
-    (symbol (str c))))
+    \9 9 })
 
 (defn split-on-assignment [symbols]
   [ (first symbols) (vec (drop 2 symbols)) ])
 
-(defn generate [rule]
-  (->>
-    (clojure.string/lower-case rule)
-    seq
-    (mapv ->symbol)))
+(defn make-converter [symbol-table]
+  (fn [rule]
+    (->>
+      (clojure.string/lower-case rule)
+      (mapv #(get symbol-table % (symbol (str %)))))))
 
-(defn builder [rules]
+(defn builder [converter rules]
   (->>
     rules
-    (map (comp split-on-assignment generate))
+    (map (comp split-on-assignment converter))
     (into (array-map))))
 
-(defmacro l-system [axiom constants rules]
-  (let [rules (builder rules)
+(defmacro l-system [axiom constants rules angle distance]
+  (let [symbol-table (make-symbol-table angle distance)
+        convert (make-converter symbol-table)
+        rules (builder convert rules)
         params (keys rules)
-        init-args (map generate constants)]
+        init-args (map convert constants)]
     `(letfn [(seq0# [~@params]
-              (lazy-seq (cons (flatten ~(generate axiom)) (seq0# ~@(vals rules)))))]
+              (cons ~(convert axiom) (lazy-seq (seq0# ~@(vals rules)))))]
        (seq0# ~@init-args))))
+
 
