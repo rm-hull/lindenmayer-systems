@@ -1,26 +1,28 @@
-(ns lindenmayer.views.explorer
-  (:use [compojure.core :only [defroutes GET]]
-        [lindenmayer.compiler :only [l-system]]
-        [turtle.core :only [draw!]]
-        [turtle.renderer.bitmap :only [->img]]
-        [turtle.renderer.vector :only [->svg]]))  
+(ns lindenmayer.explorer
+  (:require
+    [compojure.core :refer [defroutes GET]]
+    [lindenmayer.compiler :refer [l-system]]
+    [lindenmayer.png-render]
+    [turtle.core :refer [draw!]]
+    [turtle.renderer.bitmap :refer [->img]]
+    [turtle.renderer.vector :refer [->svg]]))
 
-(defn- annotate 
-  "Returns a function that can reduce a list by annotating :left, :right and 
+(defn- annotate
+  "Returns a function that can reduce a list by annotating :left, :right and
    :fwd instructions by the given distances and angles."
-  [angle distance] 
-  (fn 
+  [angle distance]
+  (fn
     ([] [])
-    ([xs] xs) 
+    ([xs] xs)
     ([xs y]
       (case y
         :right (conj (conj xs y) angle)
         :left  (conj (conj xs y) angle)
-        :fwd   (conj (conj xs y) distance) 
+        :fwd   (conj (conj xs y) distance)
         (conj xs y)))))
 
 (defn- explore [id]
-  (let [cmd (case id 
+  (let [cmd (case id
                     0 (reduce (annotate 90 10)  [] (nth (l-system "^X"                      ("" "")              ("X=X+Y^" "Y=^X-Y"))       13))    ; Heighway's Dragon
                     1 (reduce (annotate 90 10)  [] (nth (l-system "-F"                      ("^")                ("F=F+F-F-F+F"))            5))    ; Koch Curve
                     2 (reduce (annotate 60 10)  [] (nth (l-system "A"                       ("^" "^")            ("A=B-A-B" "B=A+B+A"))      8))    ; Sierpinski Curve
@@ -36,8 +38,8 @@
     (draw! ->svg cmd [1000 600])))
 
 (defroutes routes
-  (GET "/explorer/:id" [id] 
+  (GET "/explorer/:id" [id]
     (explore (Integer/parseInt id)))
-  
-  (GET "/random" [] 
-    (explore (rand-int 11)))) 
+
+  (GET "/random" []
+    (explore (rand-int 11))))
