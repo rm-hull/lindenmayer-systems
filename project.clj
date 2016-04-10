@@ -13,7 +13,7 @@
     [hiccup "1.0.5"]
     [ring-logger-timbre "0.7.5"]
     [metrics-clojure-ring "2.6.1"]
-    [rm-hull/ring-gzip-middleware "0.1.5"]
+    [rm-hull/ring-gzip-middleware "0.1.7"]
     [rm-hull/turtle "0.1.9-SNAPSHOT"]]
   :scm {:url "git@github.com:rm-hull/lindenmayer-systems.git"}
   :ring {
