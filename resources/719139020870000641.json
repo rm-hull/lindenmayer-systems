@@ -1,0 +1,15 @@
+{
+  "attribution":"https://twitter.com/LSystemBot/status/719139020870000641",
+  "color":"#e275e2",
+  "start":"FB",
+  "rules":{
+    "F":"-A-",
+    "X":"FAB",
+    "G":"K[BFKBG]X",
+    "K":"KAB",
+    "B":"GGK",
+    "A":"F-F[+F]"
+  },
+  "a":60,
+  "iter":6
+}

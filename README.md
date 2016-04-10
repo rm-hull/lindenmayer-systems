@@ -2,6 +2,8 @@
 
 [![Build Status](https://secure.travis-ci.org/rm-hull/lindenmayer-systems.svg)](http://travis-ci.org/rm-hull/lindenmayer-systems) [![Coverage Status](https://coveralls.io/repos/rm-hull/lindenmayer-systems/badge.svg?branch=master)](https://coveralls.io/r/rm-hull/lindenmayer-systems?branch=master) [![Dependencies Status](https://jarkeeper.com/rm-hull/lindenmayer-systems/status.svg)](https://jarkeeper.com/rm-hull/lindenmayer-systems)
 
+> **NOTE** This project is currently undergoing significant rework
+
 An L-System or Lindenmayer system is a parallel rewriting system, namely a
 variant of a formal grammar, most famously used to model the growth
 processes of plant development, but also able to model the morphology of
@@ -10,14 +12,31 @@ a variety of organisms.
 This project is written using Clojure, demonstrating L-System
 re-writing, deployed to Heroku:
 
-* Use http://lindenmayer-systems.destructuring-bind.org/explorer/X - where x = 0..10. -
-  this will render the page server-side, and will deliver a PNG image;
+Pre-defined examples can be generated using these links:
 
-* Use http://lindenmayer-systems.destructuring-bind.org/random -
-  this will render the page server-side, and will deliver a PNG image;
-  refreshing will show a random L-system generation from a set of 11.
+#### [Sierpinski's Triangle](http://lindenmayer-systems.destructuring-bind.org/explorer/sierpinski-triangle)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/sierpinski-triangle.svg)
 
-> **NOTE** This project is currently undergoing significant rework
+#### [Koch Snowflake](http://lindenmayer-systems.destructuring-bind.org/explorer/koch-snowflake)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/koch-snowflake.svg)
+
+#### [Cesaro-Koch Fractal](http://lindenmayer-systems.destructuring-bind.org/explorer/cesaro-koch-fractal)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/cesaro-koch-fractal.svg)
+
+#### [Fractal Plant](http://lindenmayer-systems.destructuring-bind.org/explorer/fractal-plant)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/fractal-plant.svg)
+
+#### [Penrose Tiling](http://lindenmayer-systems.destructuring-bind.org/explorer/penrose-tiling)
+[SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/penrose-tiling.svg)
+
+#### [Peano-Gosper Curve](http://lindenmayer-systems.destructuring-bind.org/explorer/peano-gosper-curve)
+[SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/peano-gosper-curve.svg)
+
+#### [Hilbert's Space-filling Curve](http://lindenmayer-systems.destructuring-bind.org/explorer/hilberts-space-filling-curve)
+[SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/hilberts-space-filling-curve.svg)
+
+#### [Heighway's Dragon](http://lindenmayer-systems.destructuring-bind.org/explorer/heighways-dragon)
+[SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/heighways-dragon.svg)
 
 ## Pre-requisites
 
