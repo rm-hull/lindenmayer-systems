@@ -20,4 +20,4 @@ RUN \
   rm -rf target/classes ~/.m2
   
 EXPOSE 3000
-ENTRYPOINT ["java", "-jar", "target/lindenmayer-systems-0.2.0-standalone.jar"]
+ENTRYPOINT ["java", "-jar", "target/lindenmayer-systems-0.2.0-SNAPSHOT-standalone.jar"]
