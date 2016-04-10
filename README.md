@@ -27,16 +27,19 @@ Pre-defined examples can be generated using these links:
 ![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/fractal-plant.svg)
 
 #### [Penrose Tiling](http://lindenmayer-systems.destructuring-bind.org/explorer/penrose-tiling)
-[SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/penrose-tiling.svg)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/penrose-tiling.svg)
 
 #### [Peano-Gosper Curve](http://lindenmayer-systems.destructuring-bind.org/explorer/peano-gosper-curve)
-[SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/peano-gosper-curve.svg)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/peano-gosper-curve.svg)
 
 #### [Hilbert's Space-filling Curve](http://lindenmayer-systems.destructuring-bind.org/explorer/hilberts-space-filling-curve)
-[SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/hilberts-space-filling-curve.svg)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/hilberts-space-filling-curve.svg)
 
 #### [Heighway's Dragon](http://lindenmayer-systems.destructuring-bind.org/explorer/heighways-dragon)
-[SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/heighways-dragon.svg)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/heighways-dragon.svg)
+
+#### [Tree](http://lindenmayer-systems.destructuring-bind.org/explorer/tree)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/tree.svg)
 
 ## Pre-requisites
 
