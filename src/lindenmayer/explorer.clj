@@ -41,6 +41,61 @@
         60
         10)))
 
+  :quadratic-koch-island
+  (first
+    (drop
+      2
+      (l-system
+        "F-F-F-F"
+        ("^")
+        ("F=F+FF-FF-F-F+F+FF-F-F+F+FF+FF-F")
+        90
+        15)))
+
+  :koch-crystal
+  (first
+    (drop
+      4
+      (l-system
+        "F-F-F-F"
+        ("^")
+        ("F=FF-F--F-F")
+        90
+        15)))
+
+  :koch-ring
+  (first
+    (drop
+      4
+      (l-system
+        "F-F-F-F"
+        ("^")
+        ("F=FF-F-F-F-F-F+F")
+        90
+        15)))
+
+  :koch-blocks
+  (first
+    (drop
+      4
+      (l-system
+        "F-F-F-F"
+        ("^")
+        ("FF-F+F-F-FF")
+        90
+        15)))
+
+  :koch-islands
+  (first
+    (drop
+      2
+      (l-system
+        "F+F+F+F"
+        ("^" "~")
+        ("F=F+f-FF+F+FF+Ff+FF-f+FF-F-FF-Ff-FFF" "f=ffffff")
+        90
+        15)))
+
   :cesaro-koch-fractal
   (first
     (drop
@@ -51,6 +106,17 @@
         ("F=F+F--F+F")
         85
         30)))
+
+  :fass-curve
+  (first
+    (drop
+      4
+      (l-system
+        "-L"
+        ("" "" "^")
+        ("L=LF+RFR+FL-F-LFLFL-FRFR+" "R=-LFLF+RFRFR+F+RF-LFL-FR" "F=F")
+        90
+        15)))
 
   :peano-gosper-curve
   (first
@@ -127,15 +193,26 @@
         30
         10)))
 
+  :shrub
+  (first
+    (drop
+      5
+      (l-system
+        "F"
+        ("^")
+        ("F=#8F[+F]F[-F][F]")
+        21.3
+        25)))
+
   :tree
   (first
     (drop
       4
       (l-system
-        "^F"
+        "F"
         ("^")
         ("F=#8FF-[#3-F+F+F]+[#9+F-F-F]")
-        22
+        22.5
         40)))
 
   :fractal-plant
@@ -145,9 +222,9 @@
       (l-system
         "X"
         ("" "^")
-        ("X=F-[[X]+]+F[+FX]-X" "F=FF")
+        ("X=#9F-[[X]+]+F[+FX]-X" "F=FF")
         25
-        30)))
+        8)))
 
   :penrose-tiling
   (first
@@ -159,6 +236,29 @@
         ("A=CE++DE----BE[-CE----AE]++" "B=+CE--DE[---AE--BE]+" "C=-AE++BE[+++CE++DE]-" "D=--CE++++AE[+DE++++BE]--BE" "E=")
         36
         60)))
+
+  :t1
+  (first
+    (drop
+      7
+      (l-system
+        "F"
+        ("^" )
+        ("F=FF-F")
+        90
+        30)))
+
+  :t2
+  (first
+    (drop
+      6
+      (l-system
+        "FB"
+        ("^" "" "" "" "" "")
+        ("F=-A-" "X=FAB" "G=K[BFKBG]X" "K=KAB" "B=GGK" "A=F-F[+F]")
+        60
+        40)))
+
   })
 
 (defn- explore [id]
