@@ -47,6 +47,9 @@ Pre-defined examples can be generated using these links:
 #### [Cesaro-Koch Fractal](http://lindenmayer-systems.destructuring-bind.org/explorer/cesaro-koch-fractal)
 ![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/cesaro-koch-fractal.svg)
 
+#### [Joined-Cross Curve](http://lindenmayer-systems.destructuring-bind.org/explorer/joined-cross-curve)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/joined-cross-curve.svg)
+
 #### [Penrose Tiling](http://lindenmayer-systems.destructuring-bind.org/explorer/penrose-tiling)
 ![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/penrose-tiling.svg)
 
