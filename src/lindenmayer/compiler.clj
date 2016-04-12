@@ -2,8 +2,8 @@
 
 (defn make-symbol-table [angle distance]
   {
-    \+ [:right angle]
-    \- [:left angle]
+    \- [:right angle]
+    \+ [:left angle]
     \^ [:fwd distance]
     \[ :save
     \] :restore
