@@ -7,15 +7,15 @@
   (let [symbol-table (make-symbol-table 30 10)
         convert (make-converter symbol-table)]
     (is (= ((comp split-on-assignment convert) "A=B-A-B")
-           ['a ['b [:left 30] 'a [:left 30] 'b]]))))
+           ['A ['B [:right 30] 'A [:right 30] 'B]]))))
 
 (deftest check-builder
   (let [symbol-table (make-symbol-table 30 10)
         convert (make-converter symbol-table)]
     (is (= (builder convert ["X=X+Y^", "Y=^X-Y"])
            {
-             'x ['x [:right 30] 'y [:fwd 10]]
-             'y [[:fwd 10] 'x [:left 30] 'y] }))))
+             'X ['X [:left 30] 'Y [:fwd 10]]
+             'Y [[:fwd 10] 'X [:right 30] 'Y] }))))
 
 ; ==============================================
 ; Sierpinski Triangle
