@@ -155,11 +155,11 @@
     (drop
       11
       (l-system
-        "L"
+        "L--^--L--^"
         ("" "")
         ("L=+R-^-R+" "R=-L+^+L-")
         45
-        10)))
+        15)))
 
   :hilberts-space-filling-curve
   (first

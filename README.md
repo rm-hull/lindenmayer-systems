@@ -20,6 +20,9 @@ Pre-defined examples can be generated using these links:
 #### [Sierpinski Triangle](http://lindenmayer-systems.destructuring-bind.org/explorer/sierpinski-triangle)
 ![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/sierpinski-triangle.svg)
 
+#### [Sierpinski Median Curve](http://lindenmayer-systems.destructuring-bind.org/explorer/sierpinski-median-curve)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/sierpinski-median-curve.svg)
+
 #### [Koch Curve](http://lindenmayer-systems.destructuring-bind.org/explorer/koch-curve)
 ![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/koch-curve.svg)
 
