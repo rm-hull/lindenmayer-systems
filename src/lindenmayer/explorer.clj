@@ -193,6 +193,17 @@
         30
         10)))
 
+  :joined-cross-curve
+  (first
+    (drop
+      3
+      (l-system
+        "XYXYXYX+XYXYXYX+XYXYXYX+XYXYXYX"
+        ("^" "" "")
+        ("F=" "X=FX+FX+FXFY-FY-" "Y=+FX+FXFY-FY-FY")
+        90
+        20)))
+
   :shrub
   (first
     (drop
