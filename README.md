@@ -29,11 +29,17 @@ Pre-defined examples can be generated using these links:
 #### [Koch Ring](http://lindenmayer-systems.destructuring-bind.org/explorer/koch-ring)
 ![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/koch-ring.svg)
 
+#### [Koch Blocks](http://lindenmayer-systems.destructuring-bind.org/explorer/koch-blocks)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/koch-blocks.svg)
+
 #### [Koch Islands](http://lindenmayer-systems.destructuring-bind.org/explorer/koch-islands)
 ![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/koch-islands.svg)
 
 #### [Koch Crystal](http://lindenmayer-systems.destructuring-bind.org/explorer/koch-crystal)
 ![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/koch-crystal.svg)
+
+#### [Quadratic Koch Island](http://lindenmayer-systems.destructuring-bind.org/explorer/quadratic-koch-island)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/quadratic-koch-island.svg)
 
 #### [Cesaro-Koch Fractal](http://lindenmayer-systems.destructuring-bind.org/explorer/cesaro-koch-fractal)
 ![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/cesaro-koch-fractal.svg)

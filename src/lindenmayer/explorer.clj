@@ -77,13 +77,13 @@
   :koch-blocks
   (first
     (drop
-      4
+      3
       (l-system
         "F-F-F-F"
         ("^")
-        ("FF-F+F-F-FF")
+        ("F=FF-F+F-F-FF")
         90
-        15)))
+        30)))
 
   :koch-islands
   (first
