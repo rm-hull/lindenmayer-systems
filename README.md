@@ -14,17 +14,29 @@ re-writing, deployed to Heroku:
 
 Pre-defined examples can be generated using these links:
 
-#### [Sierpinski's Triangle](http://lindenmayer-systems.destructuring-bind.org/explorer/sierpinski-triangle)
+#### [Sierpinski Curve](http://lindenmayer-systems.destructuring-bind.org/explorer/sierpinski-curve)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/sierpinski-curve.svg)
+
+#### [Sierpinski Triangle](http://lindenmayer-systems.destructuring-bind.org/explorer/sierpinski-triangle)
 ![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/sierpinski-triangle.svg)
+
+#### [Koch Curve](http://lindenmayer-systems.destructuring-bind.org/explorer/koch-curve)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/koch-curve.svg)
 
 #### [Koch Snowflake](http://lindenmayer-systems.destructuring-bind.org/explorer/koch-snowflake)
 ![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/koch-snowflake.svg)
 
+#### [Koch Ring](http://lindenmayer-systems.destructuring-bind.org/explorer/koch-ring)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/koch-ring.svg)
+
+#### [Koch Islands](http://lindenmayer-systems.destructuring-bind.org/explorer/koch-islands)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/koch-islands.svg)
+
+#### [Koch Crystal](http://lindenmayer-systems.destructuring-bind.org/explorer/koch-crystal)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/koch-crystal.svg)
+
 #### [Cesaro-Koch Fractal](http://lindenmayer-systems.destructuring-bind.org/explorer/cesaro-koch-fractal)
 ![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/cesaro-koch-fractal.svg)
-
-#### [Fractal Plant](http://lindenmayer-systems.destructuring-bind.org/explorer/fractal-plant)
-![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/fractal-plant.svg)
 
 #### [Penrose Tiling](http://lindenmayer-systems.destructuring-bind.org/explorer/penrose-tiling)
 ![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/penrose-tiling.svg)
@@ -35,8 +47,17 @@ Pre-defined examples can be generated using these links:
 #### [Hilbert's Space-filling Curve](http://lindenmayer-systems.destructuring-bind.org/explorer/hilberts-space-filling-curve)
 ![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/hilberts-space-filling-curve.svg)
 
+#### [FASS Curve](http://lindenmayer-systems.destructuring-bind.org/explorer/fass-curve)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/fass-curve.svg)
+
 #### [Heighway's Dragon](http://lindenmayer-systems.destructuring-bind.org/explorer/heighways-dragon)
 ![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/heighways-dragon.svg)
+
+#### [Shrub](http://lindenmayer-systems.destructuring-bind.org/explorer/shrub)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/shrub.svg)
+
+#### [Fractal Plant](http://lindenmayer-systems.destructuring-bind.org/explorer/fractal-plant)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/fractal-plant.svg)
 
 #### [Tree](http://lindenmayer-systems.destructuring-bind.org/explorer/tree)
 ![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/tree.svg)
