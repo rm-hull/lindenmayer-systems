@@ -25,9 +25,7 @@
 
 (defn make-converter [symbol-table]
   (fn [rule]
-    (->>
-      (clojure.string/lower-case rule)
-      (mapv #(get symbol-table % (symbol (str %)))))))
+    (mapv #(get symbol-table % (symbol (str %))) rule)))
 
 (defn builder [converter rules]
   (->>
