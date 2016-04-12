@@ -5,6 +5,7 @@
     \- [:right angle]
     \+ [:left angle]
     \^ [:fwd distance]
+    \~ [:pen :up :fwd distance :pen :down]
     \[ :save
     \] :restore
     \# :color-index
