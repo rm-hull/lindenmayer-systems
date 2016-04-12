@@ -15,7 +15,7 @@ re-writing, deployed to Heroku:
 Pre-defined examples can be generated using these links:
 
 #### [Sierpinski Curve](http://lindenmayer-systems.destructuring-bind.org/explorer/sierpinski-curve)
-![SVG](https://raw.githubusercontent.com/rm-hull/lindenmayer-systems/master/doc/examples/sierpinski-curve.svg)
+![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/sierpinski-curve.svg)
 
 #### [Sierpinski Triangle](http://lindenmayer-systems.destructuring-bind.org/explorer/sierpinski-triangle)
 ![SVG](https://rawgithub.com/rm-hull/lindenmayer-systems/master/doc/examples/sierpinski-triangle.svg)
