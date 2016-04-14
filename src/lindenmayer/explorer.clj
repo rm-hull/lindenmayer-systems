@@ -129,6 +129,28 @@
         60
         30)))
 
+  :peano-curve
+  (first
+    (drop
+      4
+      (l-system
+        "F"
+        ("^")
+        ("F=F+F-F-F-F+F+F+F-F")
+        90
+        30)))
+
+  :square-curve
+  (first
+    (drop
+      5
+      (l-system
+        "XF+F+X"
+        ("" "^")
+        ("X=XF-F+F-XF+F+XF-F+F-X" "F=^")
+        90
+        30)))
+
   :sierpinski-curve
   (first
     (drop
@@ -270,6 +292,82 @@
         60
         40)))
 
+  :t3
+  (first
+    (drop
+      8
+      (l-system
+        "DOO"
+        ("^" "" "" "" "" "")
+        ("F=DAD-DO" "Y=+DDF" "O=YA" "W=FOO" "A=FFO+--WF" "D=")
+        90
+        40)))
+
+  :t4
+  (first
+    (drop
+      7
+      (l-system
+        "M"
+        ("^" "" "")
+        ("F=MF" "H=H+F" "M=[]-FFMM")
+        60
+        50)))
+
+  :t5
+  (first
+    (drop
+      6
+      (l-system
+        "IHIF"
+        ("^" "" "" "" "")
+        ("F=[H-]" "I=FHF" "J=[+]I" "S=[]" "H=+SHJFF")
+        60
+        30)))
+
+  :t6
+  (first
+    (drop
+      11
+      (l-system
+        "FKKI"
+        ("^" "" "")
+        ("F=++IKKF-+" "I=[]F" "K=")
+        60
+        60)))
+
+  :t7
+  (first
+    (drop
+      7
+      (l-system
+        "ZZZF"
+        ("^" "")
+        ("F=[]-+-ZFFF" "Z=FFF")
+        90
+        40)))
+
+  :t8
+  (first
+    (drop
+      9
+      (l-system
+        "NNF"
+        ("^" "")
+        ("F=[-]" "N=F-FNF-NFF")
+        90
+        30)))
+
+  :t9
+  (first
+    (drop
+      3
+      (l-system
+        "WFF"
+        ("^" "" "")
+        ("F=[]+[RFWWF]" "W=F+FF" "R=")
+        90
+        30)))
   })
 
 (defn- explore [id]
