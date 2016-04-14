@@ -117,9 +117,9 @@ TODO
 * [Project Euler #230: Fibonacci Words](http://projecteuler.net/problem=230)
 * https://en.wikipedia.org/wiki/Dragon_curve
 * https://en.wikipedia.org/wiki/L-system
-* [Sierpinski's Triangle](http://webrot.destructuring-bind.org/sierpinski?divisor=2) - observe the difference between prime and composite divisors
 * http://www.kevs3d.co.uk/dev/lsystems/
 * http://teethgrinder.co.uk/canvas/l-system-1.html
+* http://paulbourke.net/fractals/lsys/
 
 ## License
 
