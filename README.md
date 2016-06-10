@@ -120,6 +120,8 @@ TODO
 * http://www.kevs3d.co.uk/dev/lsystems/
 * http://teethgrinder.co.uk/canvas/l-system-1.html
 * http://paulbourke.net/fractals/lsys/
+* http://canonical.org/~kragen/named-msgs/reptile-lsystems
+
 
 ## License
 
