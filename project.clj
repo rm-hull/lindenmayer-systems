@@ -7,20 +7,18 @@
   :dependencies [
     [org.clojure/clojure "1.8.0"]
     [org.clojure/data.json "0.2.6"]
-    [com.taoensso/timbre "4.4.0"]
-    [compojure "1.5.0"]
-    [ring "1.5.0"]
+    [com.taoensso/timbre "4.10.0"]
+    [compojure "1.6.0"]
+    [ring "1.6.1"]
     [hiccup "1.0.5"]
     [ring-logger-timbre "0.7.5"]
-    [metrics-clojure-ring "2.7.0"]
+    [metrics-clojure-ring "2.9.0"]
     [rm-hull/ring-gzip-middleware "0.1.7"]
-    [rm-hull/turtle "0.1.9"]
+    [rm-hull/turtle "0.1.10"]
     [rm-hull/ring-cede "0.1.0"]]
   :scm {:url "git@github.com:rm-hull/lindenmayer-systems.git"}
   :ring {
     :handler lindenmayer.handler/app}
-  :plugins [
-    [lein-ring "0.9.7"]]
   :source-paths ["src"]
   :resource-paths ["resources"]
   :jar-exclusions [#"(?:^|/).git"]
@@ -33,4 +31,5 @@
       :dependencies [
         [org.clojure/test.check "0.9.0"]]
       :plugins [
-        [lein-cloverage "1.0.6"]]}})
+        [lein-cloverage "1.0.9"]
+        [lein-ring "0.12.0"]]}})
