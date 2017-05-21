@@ -1,6 +1,9 @@
 # Lindenmayer Systems
-
-[![Build Status](https://secure.travis-ci.org/rm-hull/lindenmayer-systems.svg)](http://travis-ci.org/rm-hull/lindenmayer-systems) [![Coverage Status](https://coveralls.io/repos/rm-hull/lindenmayer-systems/badge.svg?branch=master)](https://coveralls.io/r/rm-hull/lindenmayer-systems?branch=master) [![Dependencies Status](https://jarkeeper.com/rm-hull/lindenmayer-systems/status.svg)](https://jarkeeper.com/rm-hull/lindenmayer-systems)
+[![Build Status](https://secure.travis-ci.org/rm-hull/lindenmayer-systems.svg)](http://travis-ci.org/rm-hull/lindenmayer-systems)
+[![Coverage Status](https://coveralls.io/repos/rm-hull/lindenmayer-systems/badge.svg?branch=master)](https://coveralls.io/r/rm-hull/lindenmayer-systems?branch=master)
+[![Dependencies Status](https://jarkeeper.com/rm-hull/lindenmayer-systems/status.svg)](https://jarkeeper.com/rm-hull/lindenmayer-systems)
+[![Docker Pulls](https://img.shields.io/docker/pulls/richardhull/lindenmayer-systems?maxAge=2592000)](https://hub.docker.com/r/richardhull/lindenmayer-systems/)
+[![Maintenance](https://img.shields.io/maintenance/yes/2017.svg?maxAge=2592000)]()
 
 > **NOTE** This project is currently undergoing significant rework
 
