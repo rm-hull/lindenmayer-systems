@@ -1,4 +1,4 @@
-(defproject lindenmayer-systems "0.2.0-SNAPSHOT"
+(defproject lindenmayer-systems "0.2.0"
   :description "An L-System explorer in Clojure"
   :url "http://lindenmayer-systems.destructuring-bind.org"
   :license {
