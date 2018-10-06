@@ -1,7 +1,7 @@
 (ns lindenmayer.compiler-test
   (:require
-    [clojure.test :refer :all]
-    [lindenmayer.compiler :refer :all]))
+   [clojure.test :refer :all]
+   [lindenmayer.compiler :refer :all]))
 
 (deftest check-split-on-assignment
   (let [symbol-table (make-symbol-table 30 10)
@@ -13,9 +13,8 @@
   (let [symbol-table (make-symbol-table 30 10)
         convert (make-converter symbol-table)]
     (is (= (builder convert ["X=X+Y^", "Y=^X-Y"])
-           {
-             'X ['X [:left 30] 'Y [:fwd 10]]
-             'Y [[:fwd 10] 'X [:right 30] 'Y] }))))
+           {'X ['X [:left 30] 'Y [:fwd 10]]
+            'Y [[:fwd 10] 'X [:right 30] 'Y]}))))
 
 ; ==============================================
 ; Sierpinski Triangle

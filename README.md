@@ -79,7 +79,7 @@ Pre-defined examples can be generated using these links:
 
 ## Pre-requisites
 
-You will need [Leiningen](https://github.com/technomancy/leiningen) 2.6.1 or above installed.
+You will need [Leiningen](https://github.com/technomancy/leiningen) 2.8.1 or above installed.
 
 ## Building
 
@@ -92,7 +92,7 @@ To build and start the service locally, run:
 To build and run a standalone jar:
 
     $ lein ring uberjar
-    $ java -jar target/lindenmayer-systems-0.2.0-SNAPSHOT-standalone.jar
+    $ java -jar target/lindenmayer-systems-0.2.1-standalone.jar
 
 In both instances, the webapp starts on http://localhost:3000.
 
